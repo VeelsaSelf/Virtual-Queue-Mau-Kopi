@@ -1,7 +1,6 @@
 # ☕ Mau Kopi — Laravel Ordering System
 
-A fully functional coffee shop ordering web application built with Laravel 11, Blade templating, and TailwindCSS. Faithfully recreated from Figma designs.
-
+Proyek UKK — web ordering system untuk kedai kopi Mau Kopi, Malang.
 ---
 
 ## 🖥️ Pages Included
@@ -10,13 +9,7 @@ A fully functional coffee shop ordering web application built with Laravel 11, B
 |------|-------|-------------|
 | Menu | `/` | Hero + category tabs + menu grid |
 | Menu Detail | `/menu/{slug}` | Item customization (size, sugar, ice, add-ons) |
-| Cart | `/cart` | Order summary, qty controls |
 | Checkout | `/checkout` | Payment method, name, totals |
-| Payment - Processing | `/payment/status/{id}` | Processing with countdown (Cash) |
-| Payment - Failed | `/payment/status/{id}` | Failed state |
-| Payment - Success | `/payment/status/{id}` | Success state |
-| Receipt | `/payment/receipt/{id}` | Final receipt with order number |
-
 ---
 
 ## 🚀 Setup Instructions
@@ -77,13 +70,8 @@ resources/
     menu/
       index.blade.php          ← Hero + menu grid
       show.blade.php           ← Item detail + customization
-    cart/
-      index.blade.php          ← Cart page
     checkout/
       index.blade.php          ← Checkout page
-    payment/
-      status.blade.php         ← Processing / Success / Failed states
-      receipt.blade.php        ← Order receipt
 
 routes/
   web.php                      ← All application routes
