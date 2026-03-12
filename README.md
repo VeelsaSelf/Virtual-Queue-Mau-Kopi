@@ -1,114 +1,83 @@
-# ☕ Mau Kopi — Laravel Ordering System
+# ☕ Mau Kopi
 
-Proyek UKK — web ordering system untuk kedai kopi Mau Kopi, Malang.
+Web ordering system untuk kedai kopi lokal **Mau Kopi**, Malang — Jawa Timur.
+
 ---
 
-## 🖥️ Pages Included
+## Tentang Project
 
-| Page | Route | Description |
-|------|-------|-------------|
-| Menu | `/` | Hero + category tabs + menu grid |
-| Menu Detail | `/menu/{slug}` | Item customization (size, sugar, ice, add-ons) |
-| Checkout | `/checkout` | Payment method, name, totals |
+Mau Kopi adalah aplikasi pemesanan berbasis web yang memungkinkan pelanggan melihat menu, memilih item, dan melakukan pembayaran secara mandiri. Dibangun menggunakan Laravel 11 dengan tampilan yang direkonstruksi dari desain Figma.
+
 ---
 
-## 🚀 Setup Instructions
+## Fitur
 
-### 1. Create a new Laravel project
+- 🍽️ Halaman menu dengan kategori (Coffee, Non-Coffee, Food, Desserts, Snacks)
+- 🛒 Keranjang belanja dengan update qty real-time
+- 📋 Halaman checkout dengan pilihan metode pembayaran dan tipe pesanan
+- 💳 Status pembayaran (Cash dengan countdown timer, QRIS/Transfer)
+- ✅ Halaman sukses dan struk digital
+- ❌ Halaman gagal dengan opsi kembali ke checkout
+
+---
+
+## Tech Stack
+
+| Layer | Teknologi |
+|-------|-----------|
+| Backend | Laravel 11 |
+| Templating | Blade |
+| Styling | TailwindCSS (CDN) |
+| Session | Laravel Session (tanpa database) |
+| Font | Inter (Google Fonts) |
+
+---
+
+## Cara Menjalankan
 
 ```bash
-composer create-project laravel/laravel mau-kopi
-cd mau-kopi
-```
+# 1. Clone repo
+git clone https://github.com/VeelsaSelf/Virtual-Queue-Mau-Kopi.git
+cd Virtual-Queue-Mau-Kopi
 
-### 2. Copy project files
+# 2. Install dependencies
+composer install
 
-Copy all files from this package into your Laravel project, matching the folder structure below.
-
-### 3. Configure environment
-
-```bash
+# 3. Copy .env
 cp .env.example .env
+
+# 4. Generate key
 php artisan key:generate
-```
 
-No database required — the app uses **Laravel sessions** for cart and order state.
-
-### 4. Install TailwindCSS (via CDN)
-
-TailwindCSS is loaded via CDN in `resources/views/layouts/app.blade.php`. No npm build step needed.
-
-> For production, install via npm: `npm install -D tailwindcss && npx tailwindcss init`
-
-### 5. Serve the application
-
-```bash
+# 5. Jalankan server
 php artisan serve
 ```
 
-Visit: **http://localhost:8000**
+Buka browser ke `http://127.0.0.1:8000`
 
 ---
 
-## 📁 Project Structure
+## Struktur Halaman
 
 ```
-app/
-  Http/
-    Controllers/
-      MenuController.php       ← Menu index + show
-      CartController.php       ← Add, update, remove cart items
-      CheckoutController.php   ← Checkout form + order creation
-      PaymentController.php    ← Payment status + receipt
-
-resources/
-  views/
-    layouts/
-      app.blade.php            ← Main layout (navbar, coffee bean bg)
-    components/
-      navbar.blade.php         ← Top navigation bar
-    menu/
-      index.blade.php          ← Hero + menu grid
-      show.blade.php           ← Item detail + customization
-    checkout/
-      index.blade.php          ← Checkout page
-
-routes/
-  web.php                      ← All application routes
+/                        → Menu utama
+/menu/{slug}             → Detail menu
+/cart                    → Keranjang
+/checkout                → Checkout
+/payment/{id}            → Status pembayaran
+/payment/{id}/receipt    → Struk
 ```
 
 ---
 
-## 🎨 Design System
+## Informasi Kedai
 
-| Token | Value | Usage |
-|-------|-------|-------|
-| Background | `#1C1917` | Page background |
-| Card | `#252220` | Card surfaces |
-| Border | `#3A3733` | Dividers, borders |
-| Accent | `#DDB892` | Prices, CTA, highlights |
-| Text | `#F0EDE8` | Primary text |
-| Muted | `rgba(255,255,255,0.4)` | Secondary text |
-
-**Font:** Inter (Google Fonts)
+**Mau Kopi**  
+22 Jalan Tanimbar, Malang, Jawa Timur  
+Senin – Sabtu, 09.00 – 17.00
 
 ---
 
-## ⚡ Features
+## Lisensi
 
-- ✅ Session-based cart (no database needed)
-- ✅ Dynamic price calculation (size + add-on pricing)
-- ✅ Payment method selection (Cash, QRIS, Transfer)
-- ✅ Cash payment countdown timer (10 minutes)
-- ✅ Payment simulation (success / failed) for demo
-- ✅ Animated floating coffee beans background
-- ✅ Responsive design
-- ✅ Full MVC architecture
-
----
-
-## 📝 Notes
-
-- Item data is stored as arrays in `MenuController::getMenuItems()`. For production, migrate this to a database with Eloquent models.
-- Session-based cart resets on session expiry. For persistent carts, implement database-backed cart with authentication.
-- The payment processing is simulated. Integrate a real payment gateway (Midtrans, Xendit) for production.
+Project ini dibuat untuk keperluan UKK. Tidak untuk diperjualbelikan.
