@@ -1,83 +1,60 @@
-# ☕ Mau Kopi
+# Mau Kopi
 
-Web ordering system untuk kedai kopi lokal **Mau Kopi**, Malang — Jawa Timur.
+A web-based ordering app for a local coffee shop in Malang, East Java. Customers can browse the menu, add items to their cart, pick a payment method, and get a digital receipt — all without waiting in line.
 
----
-
-## Tentang Project
-
-Mau Kopi adalah aplikasi pemesanan berbasis web yang memungkinkan pelanggan melihat menu, memilih item, dan melakukan pembayaran secara mandiri. Dibangun menggunakan Laravel 11 dengan tampilan yang direkonstruksi dari desain Figma.
+Built with Laravel 11 and Blade. No database needed, everything runs on session.
 
 ---
 
-## Fitur
+## What it does
 
-- 🍽️ Halaman menu dengan kategori (Coffee, Non-Coffee, Food, Desserts, Snacks)
-- 🛒 Keranjang belanja dengan update qty real-time
-- 📋 Halaman checkout dengan pilihan metode pembayaran dan tipe pesanan
-- 💳 Status pembayaran (Cash dengan countdown timer, QRIS/Transfer)
-- ✅ Halaman sukses dan struk digital
-- ❌ Halaman gagal dengan opsi kembali ke checkout
-
----
-
-## Tech Stack
-
-| Layer | Teknologi |
-|-------|-----------|
-| Backend | Laravel 11 |
-| Templating | Blade |
-| Styling | TailwindCSS (CDN) |
-| Session | Laravel Session (tanpa database) |
-| Font | Inter (Google Fonts) |
+- Browse menu by category — Coffee, Non-Coffee, Food, Desserts, Snacks
+- Customize each item (size, sugar level, ice, add-ons, notes)
+- Cart with quantity controls
+- Checkout with payment method and order type (Dine In / Takeaway)
+- Cash payments get a 10-second countdown timer
+- QRIS/Transfer payments auto-confirm after processing
+- Failed payments bring you back to checkout with your cart restored
+- Digital receipt at the end
 
 ---
 
-## Cara Menjalankan
+## Stack
+
+- **Laravel 11** — routing, controllers, session
+- **Blade** — templating
+- **TailwindCSS** — via CDN, no build step needed
+- **Inter** — Google Fonts
+
+---
+
+## Running locally
 
 ```bash
-# 1. Clone repo
 git clone https://github.com/VeelsaSelf/Virtual-Queue-Mau-Kopi.git
 cd Virtual-Queue-Mau-Kopi
 
-# 2. Install dependencies
 composer install
-
-# 3. Copy .env
 cp .env.example .env
-
-# 4. Generate key
 php artisan key:generate
-
-# 5. Jalankan server
 php artisan serve
 ```
 
-Buka browser ke `http://127.0.0.1:8000`
+Then open `http://127.0.0.1:8000`.
 
 ---
 
-## Struktur Halaman
+## Pages
 
-```
-/                        → Menu utama
-/menu/{slug}             → Detail menu
-/cart                    → Keranjang
-/checkout                → Checkout
-/payment/{id}            → Status pembayaran
-/payment/{id}/receipt    → Struk
-```
-
----
-
-## Informasi Kedai
-
-**Mau Kopi**  
-22 Jalan Tanimbar, Malang, Jawa Timur  
-Senin – Sabtu, 09.00 – 17.00
+| Route | Page |
+|-------|------|
+| `/` | Menu |
+| `/menu/{slug}` | Item detail |
+| `/cart` | Cart |
+| `/checkout` | Checkout |
+| `/payment/{id}` | Payment status |
+| `/payment/{id}/receipt` | Receipt |
 
 ---
 
-## Lisensi
-
-Project ini dibuat untuk keperluan UKK. Tidak untuk diperjualbelikan.
+Made for UKK — Mau Kopi, 22 Jalan Tanimbar, Malang.
