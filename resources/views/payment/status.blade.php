@@ -355,7 +355,7 @@
 
         if (seconds <= 0) {
             // Cash timeout → failed | QRIS/Transfer → success after 10s
-            submitStatus(IS_CASH ? 'failed' : 'success');
+            submitStatus('success');
             return;
         }
 
