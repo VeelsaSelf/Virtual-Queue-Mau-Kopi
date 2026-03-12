@@ -167,6 +167,8 @@
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 18px;
+    position: relative;
+    left: -60px;
 }
 .mcard {
     background: #1E1C19;
@@ -176,6 +178,8 @@
     display: block;
     border: 1px solid #2C2A26;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 302px;
+    height: 412px;
 }
 .mcard:hover { transform:translateY(-5px);box-shadow:0 14px 36px rgba(0,0,0,0.35); }
 .mcard-img { width:100%;aspect-ratio:1/1;overflow:hidden; }
@@ -325,73 +329,131 @@
 
 {{-- =================== FOOTER =================== --}}
 <footer>
-    <div class="footer-wave" style="background:#DDB892;">
-        <svg viewBox="0 0 1440 64" preserveAspectRatio="none" style="width:100%;height:64px;display:block;" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,36 C320,80 640,0 960,36 C1120,56 1300,10 1440,36 L1440,0 L0,0 Z" fill="#1C1917"/>
+
+    {{-- Wave --}}
+    <div style="line-height:0;overflow:hidden;background:#DDB892;">
+        <svg viewBox="0 0 1440 90" preserveAspectRatio="none"
+             style="width:100%;height:90px;display:block;"
+             xmlns="http://www.w3.org/2000/svg">
+            <path d="
+                M0,45
+                C120,90 240,0  400,40
+                C520,70 600,10 720,45
+                C840,80 960,5  1100,38
+                C1220,65 1340,15 1440,45
+                L1440,0 L0,0 Z
+            " fill="#1C1A17"/>
         </svg>
     </div>
 
-    <div class="footer-body">
-        <div class="footer-inner">
+    {{-- Footer body --}}
+    <div style="background:#DDB892;padding:40px 80px 0;">
+        <div style="max-width:1200px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;">
 
+            {{-- LEFT: Logo + socials --}}
             <div>
-                <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
-                    <svg width="40" height="40" viewBox="0 0 36 36" fill="none">
-                        <path d="M18 3C11.4 3 6.5 7.8 6.5 14.2C6.5 17 7.6 19.3 9.4 21.1L8.5 31H27.5L26.6 21.1C28.4 19.3 29.5 17 29.5 14.2C29.5 7.8 24.6 3 18 3Z" fill="#1C1917"/>
-                        <path d="M13.5 7c0 0-1.7 3.5 0 6s0 6 0 6M18 5.5c0 0-1.7 3.5 0 6s0 6 0 6M22.5 7c0 0-1.7 3.5 0 6s0 6 0 6" stroke="#DDB892" stroke-width="1.4" stroke-linecap="round"/>
-                        <path d="M8.5 31H27.5L27 32.8C27 33.8 26.1 34.5 25.1 34.5H10.9C9.9 34.5 9 33.8 9 32.8L8.5 31Z" fill="#1C1917"/>
+                {{-- Logo --}}
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;">
+                    <svg width="42" height="42" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Cup body -->
+                        <path d="M20 4C13 4 7.5 9 7.5 15.5C7.5 18.5 8.7 21.2 10.8 23.2L9.5 34H30.5L29.2 23.2C31.3 21.2 32.5 18.5 32.5 15.5C32.5 9 27 4 20 4Z" fill="#1C1A17"/>
+                        <!-- Steam lines -->
+                        <path d="M15 8.5C15 8.5 13 12.5 15 15.5C17 18.5 15 22 15 22" stroke="#C8956A" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M20 6.5C20 6.5 18 10.5 20 13.5C22 16.5 20 20 20 20" stroke="#C8956A" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M25 8.5C25 8.5 23 12.5 25 15.5C27 18.5 25 22 25 22" stroke="#C8956A" stroke-width="1.5" stroke-linecap="round"/>
+                        <!-- Cup base -->
+                        <path d="M9.5 34H30.5L30 36.2C30 37.3 29 38.2 27.9 38.2H12.1C11 38.2 10 37.3 10 36.2L9.5 34Z" fill="#1C1A17"/>
+                        <!-- Heart on cup -->
+                        <path d="M17.5 17C17.5 17 16 15.5 16 14.5C16 13.5 16.8 12.8 17.5 13.5C18.2 12.8 19 13.5 19 14.5C19 15.5 17.5 17 17.5 17Z" fill="#C8956A"/>
                     </svg>
-                    <span class="footer-logo-text">MAU KOPI</span>
+                    <span style="font-size:17px;font-weight:900;color:#1C1A17;letter-spacing:0.14em;font-family:'Inter',sans-serif;">MAU KOPI</span>
                 </div>
 
+                {{-- Social icons --}}
                 <div style="display:flex;gap:10px;">
-                    {{-- IG --}}
-                    <div class="si">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C1917" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="#1C1917" stroke="none"/>
+
+                    {{-- Instagram --}}
+                    <div style="width:38px;height:38px;border-radius:50%;background:rgba(28,26,23,0.12);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.15s;"
+                         onmouseover="this.style.background='rgba(28,26,23,0.22)'"
+                         onmouseout="this.style.background='rgba(28,26,23,0.12)'">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                             stroke="#1C1A17" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                         </svg>
                     </div>
-                    {{-- WA --}}
-                    <div class="si">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C1917" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+
+                    {{-- WhatsApp --}}
+                    <div style="width:38px;height:38px;border-radius:50%;background:rgba(28,26,23,0.12);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.15s;"
+                         onmouseover="this.style.background='rgba(28,26,23,0.22)'"
+                         onmouseout="this.style.background='rgba(28,26,23,0.12)'">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                             stroke="#1C1A17" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
                         </svg>
                     </div>
-                    {{-- X --}}
-                    <div class="si">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#1C1917">
+
+                    {{-- X (Twitter) --}}
+                    <div style="width:38px;height:38px;border-radius:50%;background:rgba(28,26,23,0.12);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.15s;"
+                         onmouseover="this.style.background='rgba(28,26,23,0.22)'"
+                         onmouseout="this.style.background='rgba(28,26,23,0.12)'">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#1C1A17">
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                         </svg>
                     </div>
+
                     {{-- TikTok --}}
-                    <div class="si">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#1C1917">
-                            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.96a8.19 8.19 0 004.79 1.52V7.01a4.85 4.85 0 01-1.02-.32z"/>
+                    <div style="width:38px;height:38px;border-radius:50%;background:rgba(28,26,23,0.12);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.15s;"
+                         onmouseover="this.style.background='rgba(28,26,23,0.22)'"
+                         onmouseout="this.style.background='rgba(28,26,23,0.12)'">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="#1C1A17">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.96a8.19 8.19 0 0 0 4.79 1.52V7.01a4.85 4.85 0 0 1-1.02-.32z"/>
                         </svg>
                     </div>
+
                 </div>
             </div>
 
-            <div style="display:flex;gap:72px;">
+            {{-- RIGHT: Address + Hours --}}
+            <div style="display:flex;gap:80px;padding-top:4px;">
+
                 <div>
-                    <div style="font-size:14px;font-weight:700;color:#1C1917;margin-bottom:10px;">Address</div>
-                    <div style="font-size:13px;color:rgba(28,26,23,0.6);line-height:1.7;">22 Jalan Tanimbar, Malang,<br>East Java, Indonesia</div>
+                    <div style="font-size:15px;font-weight:700;color:#1C1A17;margin-bottom:14px;font-family:'Inter',sans-serif;">Address</div>
+                    <div style="font-size:14px;color:rgba(28,26,23,0.65);line-height:1.75;font-family:'Inter',sans-serif;">
+                        22 Jalan Tanimbar, Malang,<br>
+                        East Java, Indonesia
+                    </div>
                 </div>
+
                 <div>
-                    <div style="font-size:14px;font-weight:700;color:#1C1917;margin-bottom:10px;">Hours</div>
-                    <div style="font-size:13px;color:rgba(28,26,23,0.6);line-height:1.7;">Monday – Saturday<br>09.00 - 17.00</div>
+                    <div style="font-size:15px;font-weight:700;color:#1C1A17;margin-bottom:14px;font-family:'Inter',sans-serif;">Hours</div>
+                    <div style="font-size:14px;color:rgba(28,26,23,0.65);line-height:1.75;font-family:'Inter',sans-serif;">
+                        Monday – Saturday<br>
+                        09.00 - 17.00
+                    </div>
                 </div>
+
             </div>
         </div>
 
-        <div class="footer-bottom">
-            <span style="font-size:11.5px;color:rgba(28,26,23,0.42);">Copyright © 2025. All rights reserved.</span>
-            <div>
-                <a href="#" style="font-size:11.5px;color:rgba(28,26,23,0.42);text-decoration:none;margin-left:20px;">Terms & Conditions</a>
-                <a href="#" style="font-size:11.5px;color:rgba(28,26,23,0.42);text-decoration:none;margin-left:20px;">Privacy Policy</a>
+        {{-- Divider + bottom bar --}}
+        <div style="max-width:1200px;margin:36px auto 0;padding:18px 0 24px;border-top:1px solid rgba(28,26,23,0.18);display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-size:12px;color:rgba(28,26,23,0.5);font-family:'Inter',sans-serif;">
+                Copyright © 2025. All rights reserved.
+            </span>
+            <div style="display:flex;gap:24px;">
+                <a href="#" style="font-size:12px;color:rgba(28,26,23,0.5);text-decoration:none;font-family:'Inter',sans-serif;transition:color 0.15s;"
+                   onmouseover="this.style.color='#1C1A17'"
+                   onmouseout="this.style.color='rgba(28,26,23,0.5)'">Terms & Conditions</a>
+                <a href="#" style="font-size:12px;color:rgba(28,26,23,0.5);text-decoration:none;font-family:'Inter',sans-serif;transition:color 0.15s;"
+                   onmouseover="this.style.color='#1C1A17'"
+                   onmouseout="this.style.color='rgba(28,26,23,0.5)'">Privacy Policy</a>
             </div>
         </div>
     </div>
+
 </footer>
+
 
 @endsection

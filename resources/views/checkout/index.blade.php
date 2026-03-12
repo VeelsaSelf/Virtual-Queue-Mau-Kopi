@@ -49,8 +49,8 @@
     appearance: none;
     -webkit-appearance: none;
     background: transparent;
-    border: 1.5px solid #C9A87C;
-    color: #C9A87C;
+    border: 1.5px solid #DDB892;
+    color: #DDB892;
     border-radius: 50px;
     padding: 8px 36px 8px 18px;
     font-size: 13px;
@@ -73,7 +73,7 @@
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
-    color: #C9A87C;
+    color: #DDB892;
 }
 
 /* Name section */
@@ -102,7 +102,7 @@
     transition: border-color 0.15s;
 }
 .name-input::placeholder { color: rgba(240,237,232,0.25); }
-.name-input:focus { border-color: #C9A87C; }
+.name-input:focus { border-color: #DDB892; }
 
 /* Totals */
 .totals-section { padding: 22px 28px; }
@@ -114,9 +114,9 @@
 }
 .total-row:last-child { margin-bottom: 0; }
 .total-label { font-size:14px;color:rgba(240,237,232,0.6); }
-.total-value { font-size:14px;font-weight:600;color:#C9A87C; }
+.total-value { font-size:14px;font-weight:600;color:#DDB892; }
 .grand-label { font-size:20px;font-weight:800;color:#F0EDE8; }
-.grand-value { font-size:22px;font-weight:800;color:#C9A87C; }
+.grand-value { font-size:22px;font-weight:800;color:#DDB892; }
 
 /* Sticky bottom */
 .sticky-bottom {
@@ -131,7 +131,7 @@
     padding: 18px 64px;
 }
 .checkout-btn {
-    background: #C9A87C;
+    background: #DDB892;
     color: #1C1A17;
     font-weight: 700;
     font-size: 15px;
@@ -168,7 +168,7 @@
                     <img src="{{ $item['img'] }}" alt="{{ $item['name'] }}">
                 </div>
                 <div style="flex:1;min-width:0;">
-                    <div style="font-size:14px;font-weight:600;color:#C9A87C;margin-bottom:3px;">{{ $item['name'] }}</div>
+                    <div style="font-size:14px;font-weight:600;color:#DDB892;margin-bottom:3px;">{{ $item['name'] }}</div>
                     @if($item['options'])
                         <div style="font-size:12px;color:rgba(240,237,232,0.4);line-height:1.5;">{{ $item['options'] }}</div>
                     @endif
@@ -176,7 +176,7 @@
                         <div style="font-size:12px;color:rgba(240,237,232,0.55);margin-top:2px;">Note: {{ $item['notes'] }}</div>
                     @endif
                 </div>
-                <span style="font-size:14px;font-weight:700;color:#C9A87C;flex-shrink:0;">
+                <span style="font-size:14px;font-weight:700;color:#DDB892;flex-shrink:0;">
                     Rp {{ number_format($item['price'] * $item['qty'], 0, ',', '.') }}
                 </span>
             </div>
@@ -247,7 +247,7 @@
 
 {{-- Sticky bottom bar --}}
 <div class="sticky-bottom">
-    <span style="font-size:34px;font-weight:800;color:#C9A87C;">
+    <span style="font-size:34px;font-weight:800;color:#DDB892;">
         Rp {{ number_format($total,0,',','.') }}
     </span>
     <button type="submit" form="checkoutForm" class="checkout-btn">
