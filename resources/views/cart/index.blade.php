@@ -62,10 +62,10 @@
             <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(240,237,232,0.18)" stroke-width="1.5" style="margin:0 auto 16px;display:block;">
                 <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
             </svg>
-            <p style="color:rgba(240,237,232,0.3);font-size:16px;margin-bottom:6px;">Keranjang kosong</p>
-            <p style="color:rgba(240,237,232,0.2);font-size:13px;margin-bottom:24px;">Tambah menu dulu yuk</p>
+            <p style="color:rgba(240,237,232,0.3);font-size:16px;margin-bottom:6px;">Empty Cart</p>
+            <p style="color:rgba(240,237,232,0.2);font-size:13px;margin-bottom:24px;">Let's add the menu first</p>
             <a href="{{ route('menu.index') }}" class="btn-accent" style="display:inline-block;padding:12px 28px;border-radius:14px;text-decoration:none;font-size:14px;">
-                Lihat Menu
+                see the menu
             </a>
         </div>
     @else
