@@ -6,7 +6,6 @@ Web ordering system untuk kedai kopi lokal **Mau Kopi**, Malang — Jawa Timur.
 
 ## Tentang Project
 
-Mau Kopi adalah aplikasi pemesanan berbasis web yang memungkinkan pelanggan melihat menu, memilih item, dan melakukan pembayaran secara mandiri. Dibangun menggunakan Laravel 11 dengan tampilan yang direkonstruksi dari desain Figma.
 
 ---
 
